@@ -16,9 +16,16 @@ class Solution:
             sub = chars[index : i +1]
             #print(self.ispalindrom(sub))
             if self.ispalindrom(sub):
-                newList = [num for num in pal]
-                newList.append(sub)
-                self.recursion(chars, newList, i +1 )
+                pal.append(sub)
+                self.recursion(chars, pal, i +1 )
+                pal.pop()
+        # for i in range(index, len(chars)):
+        #     sub = chars[index : i +1]
+        #     #print(self.ispalindrom(sub))
+        #     if self.ispalindrom(sub):
+        #         newList = [num for num in pal]
+        #         newList.append(sub)
+        #         self.recursion(chars, newList, i +1 )
     
     def ispalindrom(self, chrs : str ) -> bool:
         if chrs == chrs[::-1]:
